@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Karina\\Desktop\\ASSIGNMENT1DNP\\Server\\Entities\\Entities.csproj": {}
+    "C:\\Users\\Karina\\Desktop\\ASSIGNMENT1DNP\\ASSIGNMENT1DNP\\Server\\Entities\\Entities.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Karina\\Desktop\\ASSIGNMENT1DNP\\Server\\Entities\\Entities.csproj": {
+    "C:\\Users\\Karina\\Desktop\\ASSIGNMENT1DNP\\ASSIGNMENT1DNP\\Server\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Karina\\Desktop\\ASSIGNMENT1DNP\\Server\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\Karina\\Desktop\\ASSIGNMENT1DNP\\ASSIGNMENT1DNP\\Server\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\Karina\\Desktop\\ASSIGNMENT1DNP\\Server\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Users\\Karina\\Desktop\\ASSIGNMENT1DNP\\ASSIGNMENT1DNP\\Server\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\Karina\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Karina\\Desktop\\ASSIGNMENT1DNP\\Server\\Entities\\obj\\",
+        "outputPath": "C:\\Users\\Karina\\Desktop\\ASSIGNMENT1DNP\\ASSIGNMENT1DNP\\Server\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Karina\\AppData\\Roaming\\NuGet\\NuGet.Config"
