@@ -4,9 +4,10 @@ using RepositoryContracts;
 
 namespace InMemoryRepositories;
 
-public class InMemoryUser : UserInterface
+public class UserInMemoryRepository : UserInterface
 {
-    public List<User>? users { get; set; }
+
+    public List<User>? users { get; set; } = new List<User>();
     public Task<User> AddAsync(User user)
     {
         user.Id = users.Any()
@@ -15,10 +16,6 @@ public class InMemoryUser : UserInterface
         return Task.FromResult(user);
     }
 
-    Task<Post> UserInterface.AddAsync(User user)
-    {
-        throw new NotImplementedException();
-    }
 
     Task UserInterface.DeleteAsync(int id)
     {
@@ -65,6 +62,16 @@ public class InMemoryUser : UserInterface
     }
 
     Task<Post> UserInterface.GetSingleAsync(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task AddAsync(int userId)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<IEnumerable<object>> GetAllAsync()
     {
         throw new NotImplementedException();
     }

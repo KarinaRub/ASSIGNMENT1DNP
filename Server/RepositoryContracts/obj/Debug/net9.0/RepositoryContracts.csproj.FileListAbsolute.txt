@@ -1,0 +1,16 @@
+C:\Users\Karina\Desktop\ASSIGNMENT1DNP\ASSIGNMENT1DNP\Server\RepositoryContracts\bin\Debug\net9.0\RepositoryContracts.deps.json
+C:\Users\Karina\Desktop\ASSIGNMENT1DNP\ASSIGNMENT1DNP\Server\RepositoryContracts\bin\Debug\net9.0\RepositoryContracts.dll
+C:\Users\Karina\Desktop\ASSIGNMENT1DNP\ASSIGNMENT1DNP\Server\RepositoryContracts\bin\Debug\net9.0\RepositoryContracts.pdb
+C:\Users\Karina\Desktop\ASSIGNMENT1DNP\ASSIGNMENT1DNP\Server\RepositoryContracts\bin\Debug\net9.0\Entities.dll
+C:\Users\Karina\Desktop\ASSIGNMENT1DNP\ASSIGNMENT1DNP\Server\RepositoryContracts\bin\Debug\net9.0\Entities.pdb
+C:\Users\Karina\Desktop\ASSIGNMENT1DNP\ASSIGNMENT1DNP\Server\RepositoryContracts\obj\Debug\net9.0\RepositoryContracts.csproj.AssemblyReference.cache
+C:\Users\Karina\Desktop\ASSIGNMENT1DNP\ASSIGNMENT1DNP\Server\RepositoryContracts\obj\Debug\net9.0\RepositoryContracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Karina\Desktop\ASSIGNMENT1DNP\ASSIGNMENT1DNP\Server\RepositoryContracts\obj\Debug\net9.0\RepositoryContracts.AssemblyInfoInputs.cache
+C:\Users\Karina\Desktop\ASSIGNMENT1DNP\ASSIGNMENT1DNP\Server\RepositoryContracts\obj\Debug\net9.0\RepositoryContracts.AssemblyInfo.cs
+C:\Users\Karina\Desktop\ASSIGNMENT1DNP\ASSIGNMENT1DNP\Server\RepositoryContracts\obj\Debug\net9.0\RepositoryContracts.csproj.CoreCompileInputs.cache
+C:\Users\Karina\Desktop\ASSIGNMENT1DNP\ASSIGNMENT1DNP\Server\RepositoryContracts\obj\Debug\net9.0\RepositoryContracts.sourcelink.json
+C:\Users\Karina\Desktop\ASSIGNMENT1DNP\ASSIGNMENT1DNP\Server\RepositoryContracts\obj\Debug\net9.0\Reposito.28D4BA81.Up2Date
+C:\Users\Karina\Desktop\ASSIGNMENT1DNP\ASSIGNMENT1DNP\Server\RepositoryContracts\obj\Debug\net9.0\RepositoryContracts.dll
+C:\Users\Karina\Desktop\ASSIGNMENT1DNP\ASSIGNMENT1DNP\Server\RepositoryContracts\obj\Debug\net9.0\refint\RepositoryContracts.dll
+C:\Users\Karina\Desktop\ASSIGNMENT1DNP\ASSIGNMENT1DNP\Server\RepositoryContracts\obj\Debug\net9.0\RepositoryContracts.pdb
+C:\Users\Karina\Desktop\ASSIGNMENT1DNP\ASSIGNMENT1DNP\Server\RepositoryContracts\obj\Debug\net9.0\ref\RepositoryContracts.dll

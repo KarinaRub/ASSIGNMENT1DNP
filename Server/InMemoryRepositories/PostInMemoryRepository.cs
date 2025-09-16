@@ -4,7 +4,7 @@ using RepositoryContracts;
 
 namespace InMemoryRepositories;
 
-public interface IPostInMemoryRepository : PostInterface
+public class PostInMemoryRepository : PostInterface
 {
     public List<Post>? posts { get; set; }
     Post post { get; }
@@ -48,6 +48,11 @@ public interface IPostInMemoryRepository : PostInterface
     public IQueryable<Post> GetManyAsync()
     {
         return posts.AsQueryable();
+    }
+
+    Task<Post> PostInterface.AddAsync(Post post)
+    {
+        return AddAsync(post);
     }
 }
 

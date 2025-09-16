@@ -7,8 +7,8 @@ namespace InMemoryRepository;
 
 public class CommentInMemoryRepository : CommentInterface
 {
-
-    public List<Comment>? comments { get; set;}
+     public List<Comment>? comments { get; set; }
+    
     public Task<Comment> AddAsync(Comment comment)
     {
         comment.Id = comments.Any()
@@ -60,21 +60,7 @@ public class CommentInMemoryRepository : CommentInterface
         comments.Add(comment);
         return Task.CompletedTask;
     }
-
-    Task<Post> CommentInterface.AddAsync(Comment comment)
-    {
-        throw new NotImplementedException();
-    }
-
-    IQueryable<Post> CommentInterface.GetManyAsync()
-    {
-        throw new NotImplementedException();
-    }
-
-    Task<Post> CommentInterface.GetSingleAsync(int id)
-    {
-        throw new NotImplementedException();
-    }
+    
 }
 
  
