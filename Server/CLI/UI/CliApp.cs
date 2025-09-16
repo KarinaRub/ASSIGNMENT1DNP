@@ -1,30 +1,31 @@
 using System;
 using System.Reflection.Metadata;
-using CLI.UI.ManagePosts;
+using CLI.UI.Manage_Post;
+using CLI.UI.ManagerComment;
 using CLI.UI.ManageUser;
-using CLI.UI.ManageUsers;
-using CLI.UI.ManageUsers;
-using InMemoryRepository;
+using InMemoryRepositories;
 using RepositoryContracts;
 
 namespace CLI.UI;
 
 public class CliApp
 {
-    public CommentInterface InMemoryCommentRepository { get; set; }
-    public UserInterface InMemoryUserRepository { get; set; }
-    public PostInterface InMemoryPostRepository { get; set; }
+    public CommentInterface commentInterface { get; set; }
+    public UserInterface userInterface { get; set; }
+    public PostInterface postinterface { get; set; }
 
-    private ManageUserView manageUserView;
-    private ManagePostsView ManagePostsView;
+    public ManageUserView manageUserView;
+    public ManagerPostView managerPostView;
 
-    public CliApp(CommentInterface commentInterface, UserInterface userInterface, PostInterface postInterface)
+    public ManageCommentView manageCommentView;
+    public CliApp(CommentInterface commentInterface, UserInterface userInterface, PostInterface postinterface)
     {
-        this.InMemoryCommentRepository = commentInterface;
-        this.InMemoryUserRepository = userInterface;
-        this.InMemoryPostRepository = postInterface;
+        this.commentInterface = commentInterface;
+        this.userInterface = userInterface;
+        this.postinterface = postinterface;
         this.manageUserView = new ManageUserView(userInterface);
-        this.ManagePostsView = new ManagePostsView(InMemoryPostRepository);
+        this.managerPostView = new ManagerPostView(postinterface);
+        this.manageCommentView = new ManageCommentView(commentInterface);
     }
 
     internal async Task StartAsync()
@@ -44,7 +45,10 @@ public class CliApp
                     await manageUserView.ShowMenuAsync();
                     break;
                 case "2":
-                    await ManagePostsView.RunAsync();
+                    await managerPostView.ShowMenuAsync();
+                    break;
+                case "3":
+                    await manageCommentView.ShowMenuAsync();
                     break;
             }
         }

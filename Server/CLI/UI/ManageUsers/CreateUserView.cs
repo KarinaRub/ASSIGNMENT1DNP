@@ -1,39 +1,35 @@
 using System;
-using System.Threading.Tasks;
-using RepositoryContracts;
 using Entities;
-using InMemoryRepositories;
+using RepositoryContracts;
 
-namespace CLI.UI.ManageUsers
+namespace CLI.UI.ManageUser;
+
+public class CreateUserView
 {
-    public class CreateUserView
+    private UserInterface userInterface;
+    public CreateUserView(UserInterface userInterface)
     {
-        private readonly UserInterface userRepository;
-
-        public CreateUserView(UserInterface userRepository)
-        {
-            this.userRepository = userRepository;
-        }
-
-        public async Task AddUser()
-        {
-            System.Console.WriteLine("write username here");
-            string? UsernameInput = Console.ReadLine();
-            System.Console.WriteLine("write your Password");
-            string? PasswordnameInput = Console.ReadLine();
-            if (!int.TryParse(PasswordnameInput, out int password))
-            {
-                Console.WriteLine("Invalid password. Please enter digits only.");
-                return;
-            }
-            var user = new User
-            {
-                Username = UsernameInput,
-                Password = password
-            };
-            await userRepository.AddAsync(user);
-            System.Console.WriteLine("Created User");
-        }
-
+        this.userInterface = userInterface;
     }
+    public async Task ShowAsync()
+    {
+        Console.Write("Enter username: ");
+        string? username = Console.ReadLine();
+
+        Console.Write("Enter password -numbers only-: ");
+        string? input = Console.ReadLine();
+
+        if (!int.TryParse(input, out int password))
+        {
+            Console.WriteLine("Invalid password. Please enter digits only.");
+            return;
+        }
+        var user = new User
+        {
+            Username = username,
+            Password = password
+        };
+        var addedUser = await userInterface.AddAsync(user);
+        Console.WriteLine("User created successfully");
+}
 }

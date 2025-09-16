@@ -10,5 +10,9 @@ public class Post
     public int? UserId { get; set; }
     public object Username { get; set; }
 
+  public Post()
+    {
+
+    }
 
 }

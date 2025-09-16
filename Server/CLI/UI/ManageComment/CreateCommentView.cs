@@ -30,7 +30,7 @@ public class CreateCommentView
             PostId = postId,
             UserId = userId
         };
-        await CommentInterface.AddAsync(comment);
+        Comment comment1 = await CommentInterface.AddAsync(comment);
         Console.WriteLine("Commented created sucefully");
             }
 }

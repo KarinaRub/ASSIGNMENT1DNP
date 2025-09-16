@@ -7,8 +7,7 @@ namespace InMemoryRepository;
 
 public class CommentInMemoryRepository : CommentInterface
 {
-     public List<Comment>? comments { get; set; }
-    
+     public List<Comment>? comments { get; set; } = new List<Comment>();
     public Task<Comment> AddAsync(Comment comment)
     {
         comment.Id = comments.Any()
@@ -18,7 +17,7 @@ public class CommentInMemoryRepository : CommentInterface
         return Task.FromResult(comment);
     }
 
-    public Task Delete(int id)
+    public Task DeleteAsync(int id)
     {
         Comment? commentToRemove = comments.SingleOrDefault(p => p.Id == id);
         if (commentToRemove is null)
@@ -26,12 +25,7 @@ public class CommentInMemoryRepository : CommentInterface
             throw new InvalidOperationException($"Comment with ID '{id}' not found");
         }
         comments.Remove(commentToRemove);
-        return Task.CompletedTask;
-    }
-
-    public Task DeleteAsync(int id)
-    {
-        throw new NotImplementedException();
+        return Task.CompletedTask;;
     }
 
     public IQueryable<Comment> GetManyAsync()

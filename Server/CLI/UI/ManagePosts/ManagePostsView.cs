@@ -8,14 +8,14 @@ public class ManagerPostView
 {
     private PostInterface postInterface;
     private CreatePostView createPostView;
-    private ListPostsView ListPostsView;
+    private ListPostsView postListView;
     private ViewSinglePostView viewSinglePostView;
 
     public ManagerPostView(PostInterface postInterface)
     {
         this.postInterface = postInterface;
         this.createPostView = new CreatePostView(postInterface);
-        this.ListPostsView = new ListPostsView(postInterface);
+        this.postListView = new ListPostsView(postInterface);
         this.viewSinglePostView = new ViewSinglePostView(postInterface);
     }
        
@@ -36,7 +36,7 @@ public class ManagerPostView
                     await createPostView.ShowAsync();
                     break;
                 case "2":
-                    await ListPostsView.ShowAsync();
+                    await postListView.ShowAsync();
                     break;
                 case "3":
                     await viewSinglePostView.ShowAsync();

@@ -1,37 +1,35 @@
 using System;
-using CLI.UI.ManageUsers;
 using RepositoryContracts;
 
 namespace CLI.UI.ManageUser;
 
 public class ManageUserView
 {
-    private UserInterface InMemoryUserRepository;
+    private UserInterface userInterface;
     private CreateUserView createUserView;
-    private ListUsersView listUserView;
+    private ListUserView listUserView;
 
-    public ManageUserView(UserInterface InMemoryUserRepository)
+    public ManageUserView(UserInterface userInterface)
     {
-        this.InMemoryUserRepository = InMemoryUserRepository;
-        this.createUserView = new CreateUserView(InMemoryUserRepository);
-        this.listUserView = new ListUsersView(InMemoryUserRepository);
-    }
-
-
+        this.userInterface = userInterface;
+        this.createUserView =  new CreateUserView(userInterface);
+        this.listUserView = new ListUserView(userInterface);
+            }
+       
     public async Task ShowMenuAsync()
     {
         while (true)
         {
             Console.WriteLine("\n=== Manage User ===");
             Console.WriteLine("1. Create User");
-            Console.WriteLine("2. List Users");
+            Console.WriteLine("2. List User");
             Console.WriteLine("0. Back");
 
             string? choice = Console.ReadLine();
             switch (choice)
             {
                 case "1":
-                    await createUserView.AddUser();
+                    await createUserView.ShowAsync();
                     break;
                 case "2":
                     await listUserView.ShowAsync();
@@ -41,6 +39,4 @@ public class ManageUserView
             }
         }
     }
-
-
 }

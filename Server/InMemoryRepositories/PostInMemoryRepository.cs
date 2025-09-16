@@ -6,17 +6,13 @@ namespace InMemoryRepositories;
 
 public class PostInMemoryRepository : PostInterface
 {
-    public List<Post>? posts { get; set; }
-    Post post { get; }
+        private List<Post>? posts { get; set; } = new List<Post>();
 
-    new Task<Post> AddAsync(Post post)
+    public Task<Post> AddAsync(Post post)
     {
-        post.Id = posts.Any()
-        ? posts.Max(p => p.Id) + 1
-        : 1;
+        post.Id = posts.Any() ? posts.Max(p => p.Id) + 1 : 1;
         posts.Add(post);
         return Task.FromResult(post);
-
     }
     public Task UpdateAsync(Post post)
     {
@@ -25,9 +21,10 @@ public class PostInMemoryRepository : PostInterface
         {
             throw new InvalidOperationException($"Post with ID '{post.Id}' not found");
         }
-        posts.Remove(existingPost);
 
+        posts.Remove(existingPost);
         posts.Add(post);
+
         return Task.CompletedTask;
     }
     public Task DeleteAsync(int id)
@@ -40,19 +37,15 @@ public class PostInMemoryRepository : PostInterface
         posts.Remove(postToRemove);
         return Task.CompletedTask;
     }
-    public Task<Post> GetSingleAsync(int id)
-    { // Do implementation
+    public Task<Post?> GetSingleAsync(int id)
+        {
+            Post? post = posts.SingleOrDefault(p => p.Id == id);
+            return Task.FromResult(post);
+        }
 
-        return Task.FromResult(post);
-    }
-    public IQueryable<Post> GetManyAsync()
-    {
-        return posts.AsQueryable();
-    }
-
-    Task<Post> PostInterface.AddAsync(Post post)
-    {
-        return AddAsync(post);
-    }
+        public IQueryable<Post> GetManyAsync()
+        {
+            return posts.AsQueryable();
+        }
 }
 
