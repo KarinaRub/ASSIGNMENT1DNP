@@ -1,0 +1,163 @@
+{
+  "version": 3,
+  "targets": {
+    "net9.0": {
+      "CLI/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Entities": "1.0.0",
+          "RepositoryContracts": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CLI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CLI.dll": {}
+        }
+      },
+      "Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Entities.dll": {}
+        }
+      },
+      "InMemoryRepositories/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Entities": "1.0.0",
+          "RepositoryContracts": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/InMemoryRepositories.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/InMemoryRepositories.dll": {}
+        }
+      },
+      "RepositoryContracts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/RepositoryContracts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RepositoryContracts.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CLI/1.0.0": {
+      "type": "project",
+      "path": "../CLI/CLI.csproj",
+      "msbuildProject": "../CLI/CLI.csproj"
+    },
+    "Entities/1.0.0": {
+      "type": "project",
+      "path": "../Entities/Entities.csproj",
+      "msbuildProject": "../Entities/Entities.csproj"
+    },
+    "InMemoryRepositories/1.0.0": {
+      "type": "project",
+      "path": "../InMemoryRepositories/InMemoryRepositories.csproj",
+      "msbuildProject": "../InMemoryRepositories/InMemoryRepositories.csproj"
+    },
+    "RepositoryContracts/1.0.0": {
+      "type": "project",
+      "path": "../RepositoryContracts/RepositoryContracts.csproj",
+      "msbuildProject": "../RepositoryContracts/RepositoryContracts.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net9.0": [
+      "CLI >= 1.0.0",
+      "Entities >= 1.0.0",
+      "InMemoryRepositories >= 1.0.0",
+      "RepositoryContracts >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Karina\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Karina\\Desktop\\ASSIGNMENT1DNP\\ASSIGNMENT1DNP\\Server\\FileRepositories\\FileRepository.csproj",
+      "projectName": "FileRepository",
+      "projectPath": "C:\\Users\\Karina\\Desktop\\ASSIGNMENT1DNP\\ASSIGNMENT1DNP\\Server\\FileRepositories\\FileRepository.csproj",
+      "packagesPath": "C:\\Users\\Karina\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Karina\\Desktop\\ASSIGNMENT1DNP\\ASSIGNMENT1DNP\\Server\\FileRepositories\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Karina\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net9.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "projectReferences": {
+            "C:\\Users\\Karina\\Desktop\\ASSIGNMENT1DNP\\ASSIGNMENT1DNP\\Server\\CLI\\CLI.csproj": {
+              "projectPath": "C:\\Users\\Karina\\Desktop\\ASSIGNMENT1DNP\\ASSIGNMENT1DNP\\Server\\CLI\\CLI.csproj"
+            },
+            "C:\\Users\\Karina\\Desktop\\ASSIGNMENT1DNP\\ASSIGNMENT1DNP\\Server\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Users\\Karina\\Desktop\\ASSIGNMENT1DNP\\ASSIGNMENT1DNP\\Server\\Entities\\Entities.csproj"
+            },
+            "C:\\Users\\Karina\\Desktop\\ASSIGNMENT1DNP\\ASSIGNMENT1DNP\\Server\\InMemoryRepositories\\InMemoryRepositories.csproj": {
+              "projectPath": "C:\\Users\\Karina\\Desktop\\ASSIGNMENT1DNP\\ASSIGNMENT1DNP\\Server\\InMemoryRepositories\\InMemoryRepositories.csproj"
+            },
+            "C:\\Users\\Karina\\Desktop\\ASSIGNMENT1DNP\\ASSIGNMENT1DNP\\Server\\RepositoryContracts\\RepositoryContracts.csproj": {
+              "projectPath": "C:\\Users\\Karina\\Desktop\\ASSIGNMENT1DNP\\ASSIGNMENT1DNP\\Server\\RepositoryContracts\\RepositoryContracts.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.300"
+    },
+    "frameworks": {
+      "net9.0": {
+        "targetAlias": "net9.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

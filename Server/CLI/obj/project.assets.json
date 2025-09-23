@@ -12,20 +12,6 @@
           "bin/placeholder/Entities.dll": {}
         }
       },
-      "InMemoryRepositories/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v9.0",
-        "dependencies": {
-          "Entities": "1.0.0",
-          "RepositoryContracts": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/InMemoryRepositories.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/InMemoryRepositories.dll": {}
-        }
-      },
       "RepositoryContracts/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -47,11 +33,6 @@
       "path": "../Entities/Entities.csproj",
       "msbuildProject": "../Entities/Entities.csproj"
     },
-    "InMemoryRepositories/1.0.0": {
-      "type": "project",
-      "path": "../InMemoryRepositories/InMemoryRepositories.csproj",
-      "msbuildProject": "../InMemoryRepositories/InMemoryRepositories.csproj"
-    },
     "RepositoryContracts/1.0.0": {
       "type": "project",
       "path": "../RepositoryContracts/RepositoryContracts.csproj",
@@ -61,7 +42,6 @@
   "projectFileDependencyGroups": {
     "net9.0": [
       "Entities >= 1.0.0",
-      "InMemoryRepositories >= 1.0.0",
       "RepositoryContracts >= 1.0.0"
     ]
   },
@@ -92,9 +72,6 @@
           "projectReferences": {
             "C:\\Users\\Karina\\Desktop\\ASSIGNMENT1DNP\\ASSIGNMENT1DNP\\Server\\Entities\\Entities.csproj": {
               "projectPath": "C:\\Users\\Karina\\Desktop\\ASSIGNMENT1DNP\\ASSIGNMENT1DNP\\Server\\Entities\\Entities.csproj"
-            },
-            "C:\\Users\\Karina\\Desktop\\ASSIGNMENT1DNP\\ASSIGNMENT1DNP\\Server\\InMemoryRepositories\\InMemoryRepositories.csproj": {
-              "projectPath": "C:\\Users\\Karina\\Desktop\\ASSIGNMENT1DNP\\ASSIGNMENT1DNP\\Server\\InMemoryRepositories\\InMemoryRepositories.csproj"
             },
             "C:\\Users\\Karina\\Desktop\\ASSIGNMENT1DNP\\ASSIGNMENT1DNP\\Server\\RepositoryContracts\\RepositoryContracts.csproj": {
               "projectPath": "C:\\Users\\Karina\\Desktop\\ASSIGNMENT1DNP\\ASSIGNMENT1DNP\\Server\\RepositoryContracts\\RepositoryContracts.csproj"
