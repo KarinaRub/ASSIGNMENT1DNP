@@ -18,6 +18,10 @@ public class CliApp
     public ManagerPostView managerPostView;
 
     public ManageCommentView manageCommentView;
+    private IUserRepository userRepository;
+    private IPostRepository postRepository;
+    private ICommentRepository commentRepository;
+
     public CliApp(CommentInterface commentInterface, UserInterface userInterface, PostInterface postinterface)
     {
         this.commentInterface = commentInterface;
@@ -26,6 +30,13 @@ public class CliApp
         this.manageUserView = new ManageUserView(userInterface);
         this.managerPostView = new ManagerPostView(postinterface);
         this.manageCommentView = new ManageCommentView(commentInterface);
+    }
+
+    public CliApp(IUserRepository userRepository, IPostRepository postRepository, ICommentRepository commentRepository)
+    {
+        this.userRepository = userRepository;
+        this.postRepository = postRepository;
+        this.commentRepository = commentRepository;
     }
 
     internal async Task StartAsync()

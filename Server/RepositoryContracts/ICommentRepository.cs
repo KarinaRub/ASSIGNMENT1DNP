@@ -1,13 +1,12 @@
-using System;
 using Entities;
 
 namespace RepositoryContracts;
 
-public interface CommentInterface
+public interface ICommentRepository
 {
-   Task<Comment> AddAsync(Comment comment);
+    Task<Comment> AddAsync(Comment comment);
     Task UpdateAsync(Comment comment);
     Task DeleteAsync(int id);
     Task<Comment> GetSingleAsync(int id);
-    IQueryable<Comment> GetManyAsync();
+    IQueryable<Comment> GetMany();
 }
