@@ -7,14 +7,18 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.2"/>
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.2" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\Client\BlazorApp1\BlazorApp1.csproj" />
       <ProjectReference Include="..\..\Shared\ApiContracts\ApiContracts.csproj" />
+      <ProjectReference Include="..\CLI\CLI.csproj" />
       <ProjectReference Include="..\Entities\Entities.csproj" />
       <ProjectReference Include="..\FileRepositories\FileRepositories.csproj" />
+      <ProjectReference Include="..\FileRepositories\FileRepository.csproj" />
+      <ProjectReference Include="..\InMemoryRepositories\InMemoryRepositories.csproj" />
       <ProjectReference Include="..\RepositoryContracts\RepositoryContracts.csproj" />
     </ItemGroup>
 
