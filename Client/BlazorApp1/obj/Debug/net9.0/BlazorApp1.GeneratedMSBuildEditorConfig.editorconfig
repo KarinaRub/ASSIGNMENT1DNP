@@ -24,8 +24,16 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Karina/Desktop/ASSIGNMENT1DNP/ASSIGNMENT1DNP/Client/BlazorApp1/Components/Pages/Component.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb21wb25lbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Karina/Desktop/ASSIGNMENT1DNP/ASSIGNMENT1DNP/Client/BlazorApp1/Components/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb3VudGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Karina/Desktop/ASSIGNMENT1DNP/ASSIGNMENT1DNP/Client/BlazorApp1/Components/Pages/CreatePost.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDcmVhdGVQb3N0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Karina/Desktop/ASSIGNMENT1DNP/ASSIGNMENT1DNP/Client/BlazorApp1/Components/Pages/Error.razor]
@@ -34,6 +42,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Karina/Desktop/ASSIGNMENT1DNP/ASSIGNMENT1DNP/Client/BlazorApp1/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Karina/Desktop/ASSIGNMENT1DNP/ASSIGNMENT1DNP/Client/BlazorApp1/Components/Pages/NotFound.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xOb3RGb3VuZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Karina/Desktop/ASSIGNMENT1DNP/ASSIGNMENT1DNP/Client/BlazorApp1/Components/Pages/PostDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xQb3N0RGV0YWlscy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Karina/Desktop/ASSIGNMENT1DNP/ASSIGNMENT1DNP/Client/BlazorApp1/Components/Pages/PostList.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xQb3N0TGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Karina/Desktop/ASSIGNMENT1DNP/ASSIGNMENT1DNP/Client/BlazorApp1/Components/Pages/UserPage.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xVc2VyUGFnZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Karina/Desktop/ASSIGNMENT1DNP/ASSIGNMENT1DNP/Client/BlazorApp1/Components/Pages/Weather.razor]

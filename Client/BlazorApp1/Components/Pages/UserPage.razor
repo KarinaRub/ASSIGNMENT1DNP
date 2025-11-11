@@ -1,27 +1,14 @@
-﻿@page "/"
-@using ApiContracts.UserFolder
-@using System.Reflection
+﻿@page "/user"
 @inject BlazorApp1.Services.IUserService UserService
-
-
+@using ApiContracts.UserFolder
 
 <h3>Add User (Test)</h3>
 
-<div class="mb-3">
-  <label class="form-label">Username</label>
-  <input class="form-control" @bind="newUser.Username" placeholder="Enter username" />
-</div>
-
-<div class="mb-3">
-  <label class="form-label">Password</label>
-  <input class="form-control" type="password" @bind="passwordInput" placeholder="Enter password" />
-</div>
-
-<button class="btn btn-primary" @onclick="CreateUser">Create User</button>
+<button class="btn btn-primary" @onclick="CreateUser">Add User</button>
 
 @if (!string.IsNullOrEmpty(message))
 {
-  <p>@message</p>
+    <p>@message</p>
 }
 
 @code {
@@ -37,7 +24,7 @@
     {
         try
         {
-           
+
             if (int.TryParse(passwordInput, out int parsedPassword))
             {
                 newUser.Password = parsedPassword;
@@ -51,6 +38,7 @@
             var created = await UserService.AddUserAsync(newUser);
             message = $"User '{created.Username}' created successfully!";
             
+         
             newUser = new()
             {
                 Username = string.Empty,
@@ -62,5 +50,5 @@
         {
             message = $"Error: {ex.Message}";
         }
-        }
+}
 }

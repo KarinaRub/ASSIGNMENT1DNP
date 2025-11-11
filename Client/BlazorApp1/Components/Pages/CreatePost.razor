@@ -1,0 +1,61 @@
+﻿@page "/create-post"
+@using ApiContracts.PostFolder
+@using BlazorApp1.Services
+@inject IPostService PostService
+
+
+<h3>Add post</h3>
+<div class="mb-3">
+    <label class="form-label">Title</label>
+    <input class="form-control" @bind="title" placeholder="Enter post title" />
+</div>
+
+<div class="mb-3">
+    <label class="form-label">Author ID</label>
+    <input class="form-control" type="number" @bind="authorUserId" placeholder="Enter author ID" />
+</div>
+
+<div class="mb-3">
+    <label class="form-label">Body</label>
+    <textarea class="form-control" @bind="body" placeholder="Write your post..." rows="5"></textarea>
+</div>
+
+<button class="btn btn-primary" @onclick="AddPostAsync">Add</button>
+
+@if (!string.IsNullOrEmpty(message))
+{
+    <p class="text-success mt-3">@message</p>
+}
+
+@if (!string.IsNullOrEmpty(error))
+{
+    <p class="text-danger mt-3">@error</p>
+}
+
+@code {
+    string title = "", body = "";
+    int authorUserId=0;
+    string? error;
+    private string? message;
+
+    async Task AddPostAsync()
+    {
+    try
+        {
+            var added = await PostService.AddPostAsync(new CreatePostDTO
+            {
+                Title = title,
+                Body = body,
+                AuthorUserId = authorUserId
+            });
+
+            message = $"Post '{added.Title}' by user ID {added.AuthorUserId} created successfully!";
+            error = null;
+        }
+        catch (Exception ex)
+        {
+            error = $"{ex.Message}";
+            message = null;
+        }
+    }
+}

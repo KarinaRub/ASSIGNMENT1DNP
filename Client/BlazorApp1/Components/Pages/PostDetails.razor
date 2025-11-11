@@ -1,0 +1,110 @@
+﻿@page "/post/{Id:int}"
+@using BlazorApp1.Services
+@using ApiContracts.CommentFolder
+@using ApiContracts.PostFolder
+@inject IPostService PostService
+@inject ICommentService commentService
+
+<h3>Post Details</h3>
+
+@if (post is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="card p-3 mb-3">
+        <h4>@post.Title</h4>
+        <p>@post.Body</p>
+        <p><i>By @post.AuthorName (UserId: @post.AuthorUserId)</i></p>
+    </div>
+ <h5>Comments</h5>
+
+    @if (comments.Any())
+    {
+        <ul class="list-group mb-3">
+            @foreach (var c in comments)
+            {
+                <li class="list-group-item">
+                    <div><b>User @c.AuthorUserId</b></div>
+                    <div>@c.Body</div>
+                </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>No comments yet.</p>
+    }
+
+    <h5>Add Comment</h5>
+    <div class="mb-2">
+        <label class="form-label">Author User Id</label>
+        <input class="form-control" type="number" @bind="newComment.AuthorUserId" />
+    </div>
+    <div class="mb-2">
+        <label class="form-label">Comment</label>
+        <textarea class="form-control" rows="3" @bind="newComment.Body"></textarea>
+    </div>
+    <button class="btn btn-primary" @onclick="AddComment">Add Comment</button>
+
+    @if (!string.IsNullOrEmpty(message))
+    {
+        <p class="text-success mt-2">@message</p>
+    }
+    @if (!string.IsNullOrEmpty(error))
+    {
+        <p class="text-danger mt-2">@error</p>
+    }
+}
+
+@code {
+    [Parameter] public int Id { get; set; }
+
+    private PostDTO? post;
+    private List<CommentDTO> comments = new();
+    private CreateCommentDTO newComment = new()
+    {
+        PostId =0,
+        AuthorUserId =0,
+        Body = ""
+    };
+    private string? message, error;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        post = await PostService.GetPostByIdAsync(Id);
+
+        comments = await commentService.GetByPostIdAsync(Id);
+
+      
+        newComment = new CreateCommentDTO
+        {
+            PostId = Id,
+            AuthorUserId = 0, 
+            Body = ""
+        };
+    }
+
+    private async Task AddComment()
+    {
+        try
+        {
+            
+            newComment.PostId = Id;
+
+            var added = await commentService.AddCommentAsync(newComment);
+
+       
+            comments.Insert(0, added);
+            newComment.Body = "";
+            message = "Comment added!";
+            error = null;
+        }
+        catch (Exception ex)
+        {
+            error = $"{ex.Message}";
+            message = null;
+        }
+    }
+}
