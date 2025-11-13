@@ -1,7 +1,5 @@
-﻿using System.Security.Claims;
-using ApiContracts;
-using ApiContracts.Auth;
-using ApiContracts.User;
+﻿using System.Linq;
+using System.Threading.Tasks;
 using Entities;
 using Microsoft.AspNetCore.Mvc;
 using RepositoryContracts;
@@ -20,9 +18,9 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost("login")]
-    public async Task<ActionResult<UserDto>> Login([FromBody] LoginRequest request)
+    public async Task<ActionResult<UserDTO>> Login([FromBody] LoginRequest request)
     {
-        User? user = userRepository.GetMany().SingleOrDefault(u => u.UserName == request.UserName);
+        User? user = userRepository.GetMany().SingleOrDefault(u => u.Username == request.UserName);
         if (user == null)
         {
             return Unauthorized();
@@ -33,13 +31,17 @@ public class AuthController : ControllerBase
             return Unauthorized();
         }
 
-        UserDto userDto = new UserDto
+        UserDTO userDTO = new UserDTO
         {
             Id = user.Id,
-            UserName = user.UserName
+            Username = user.Username
         };
 
 
-        return userDto;
+        return userDTO;
     }
+}
+
+public class UserDTO
+{
 }

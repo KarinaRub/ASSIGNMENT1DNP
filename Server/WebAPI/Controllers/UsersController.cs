@@ -32,9 +32,7 @@ public class UsersController : ControllerBase
         return Created($"/Users/{dto.Id}", dto); 
     }
 
-    // This method will eventually use async when database is added.
-    // You could keep it synchronous for now and update later without problems.
-    private async Task VerifyUserNameIsAvailableAsync(string userName)
+     private async Task VerifyUserNameIsAvailableAsync(string userName)
     {
         bool usernameIsTaken = userRepo.GetMany()
             .Any(u => u.UserName.ToLower().Equals(userName.ToLower()));
@@ -44,12 +42,11 @@ public class UsersController : ControllerBase
         }
     }
 
-    [HttpPut("{id:int}")] // putting int constraint on the route parameter. Not strictly necessary, but can be useful.
-    public async Task<ActionResult> UpdateUser([FromRoute] int id, [FromBody] UpdateUserDto request)
+    [HttpPut("{id:int}")] 
+        public async Task<ActionResult> UpdateUser([FromRoute] int id, [FromBody] UpdateUserDto request)
     {
         User existing = await userRepo.GetSingleAsync(id);
 
-        // could validate incoming data here, or in a business logic layer
         existing.UserName = request.UserName;
         existing.Password = request.Password;
         await userRepo.UpdateAsync(existing);
@@ -70,14 +67,10 @@ public class UsersController : ControllerBase
         return Ok(user);
     }
 
-    // This method takes a nullable string indicated with the question mark,
-    // i.e. I explicitly state the value can be null. I also assign the parameter to null as a default value. 
-    // This is not strictly necessary, but I find it adds to the readability of the code.
-    // The point is that the client can optionally apply this query parameter.
     [HttpGet]
     public ActionResult<IEnumerable<User>> GetUsers([FromQuery] string? userNameContains = null)
     {
-        // Here I chain the Where clauses together to filter the users
+        
         IQueryable<User> users = userRepo.GetMany()
             .Where(
                 u => userNameContains == null ||
@@ -87,15 +80,7 @@ public class UsersController : ControllerBase
         return Ok(users);
     }
     
-    /*
-     * Below endpoints are not strictly necessary. I can retrieve the same data from other endpoints.
-     * But I want to illustrate that you can make multiple endpoints for the same data, if you want to.
-     * This approach creates more dedicated, specialized endpoints, which can be easier to understand and use.
-     */
-    
-
-    // I include this endpoint as an alternate example. My current Get-Many-Posts endpoint can take query parameters, to e.g. filter by user id.
-    // But we could also create a dedicated endpoint for returning all posts written by a specific user.
+   
     [HttpGet("{userId:int}/posts")]
     public async Task<ActionResult<IEnumerable<Post>>> GetPostsForUser(
         [FromRoute] int userId,
@@ -107,7 +92,6 @@ public class UsersController : ControllerBase
         return Ok(posts);
     }
 
-    // Here is another example, for getting all comments written by a user.
     [HttpGet("{userId:int}/comments")]
     public async Task<ActionResult<IEnumerable<Comment>>> GetCommentsForUser(
         [FromRoute] int userId,

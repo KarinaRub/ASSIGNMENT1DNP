@@ -33,7 +33,7 @@ internal class Program
         }
 
         app.UseHttpsRedirection();
-
+        app.MapControllers();
         app.Run();
     }
 }
